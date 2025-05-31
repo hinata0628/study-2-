@@ -50,3 +50,18 @@ def handle_message(event):
 print("LINE_CHANNEL_SECRET:", LINE_CHANNEL_SECRET)
 print("LINE_CHANNEL_ACCESS_TOKEN:", LINE_CHANNEL_ACCESS_TOKEN)
 
+    elif user_message == '今日':
+        total_seconds = daily_totals.get(user_id, {}).get(date_str, 0)
+        mins = int(total_seconds // 60)
+        hrs = mins // 60
+        m = mins % 60
+        response = f'🟢 今日（{date_str}）の勉強時間：{hrs}時間{m}分'
+
+    elif user_message == 'いままで':
+        total_seconds = sum(daily_totals.get(user_id, {}).values())
+        mins = int(total_seconds // 60)
+        hrs = mins // 60
+        m = mins % 60
+        response = f'📚 これまでの勉強時間：{hrs}時間{m}分'
+
+

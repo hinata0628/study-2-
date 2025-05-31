@@ -32,10 +32,10 @@ def handle_message(event):
     text = event.message.text
     now = datetime.now()
 
-    if text == "勉強始める":
+    if text == "開始":
         user_sessions[user_id] = now
         reply = f"勉強を開始しました！（{now.strftime('%H:%M')}）"
-    elif text == "終わった":
+    elif text == "終了":
         if user_id in user_sessions:
             start = user_sessions.pop(user_id)
             minutes = (now - start).seconds // 60

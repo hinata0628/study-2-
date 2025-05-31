@@ -47,3 +47,6 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=response)
     )
+print("LINE_CHANNEL_SECRET:", LINE_CHANNEL_SECRET)
+print("LINE_CHANNEL_ACCESS_TOKEN:", LINE_CHANNEL_ACCESS_TOKEN)
+
